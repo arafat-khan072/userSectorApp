@@ -1,5 +1,6 @@
 const express = require("express");
 const userRouter = require("./routes/userRoutes");
+const sectorRouter = require("./routes/sectorRoutes");
 
 const app = express();
 
@@ -20,4 +21,5 @@ mongoose.connect("mongodb+srv://admin:admin@cluster0.8debgtw.mongodb.net/test?re
     console.log(error)
 })
 app.use("/auth", userRouter);
+app.use("/sectors", sectorRouter);
 

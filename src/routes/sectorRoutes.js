@@ -1,7 +1,9 @@
 const express = require("express");
-const { signup, login } = require("../controllers/userController");
+const { getSectors, createSector } = require("../controllers/sectorController");
+const auth = require("../middlewares/auth");
 const sectorRouter = express.Router();
 
-sectorRouter.post("/sectors/add", addSector);
+sectorRouter.get("/",  getSectors);
+sectorRouter.post("/", createSector);
 
 module.exports = sectorRouter;
