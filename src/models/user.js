@@ -13,10 +13,10 @@ const UserSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    sectors: {
-        type: [Number], // this goes as array
-        required: false
-    },
+    sectors: [{
+        id: { type: mongoose.Schema.ObjectId },
+        name: { type: String }
+    }],
     isAgreed: {
         type: Boolean,
         default: false

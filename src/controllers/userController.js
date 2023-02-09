@@ -59,12 +59,30 @@ const login = async (req, res) => {
 
 const profile = async (req, res) => {
     try {
-        const userDetails = await userModel.find({_id: req.userId});
+        const userDetails = await userModel.find({ _id: req.userId });
         res.status(200).json(userDetails);
     } catch (error) {
         console.log(error);
-        res.status(500).json({message: "Something went wrong"})
+        res.status(500).json({ message: "Something went wrong" })
     }
 }
 
-module.exports = { signup, login, profile }
+const updateProfile = async (req, res) => {
+    const id = req.userId;
+    const { sector, isAgreed } = req.body;
+    const newUser = {
+        sectors: sector,
+        isAgreed: isAgreed
+    };
+    console.log(newUser, id)
+    try {
+        await userModel.findByIdAndUpdate(req.userId, newUser, { new: true });
+        res.status(200).json(newUser);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: "Something went wrong" })
+    }
+}
+
+
+module.exports = { signup, login, profile, updateProfile }

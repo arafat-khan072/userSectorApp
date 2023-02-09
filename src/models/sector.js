@@ -5,10 +5,10 @@ const SectorSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    parent_id: {
-        type: Number,
-        required: true
-    }
+    child: [{
+        _id: { type: mongoose.Schema.ObjectId, auto: true },
+        name: { type: String }
+    }]
 
 }, { timestamps: true })
 
