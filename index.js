@@ -1,11 +1,12 @@
 const express = require("express");
 const userRouter = require("./routes/userRoutes");
 const sectorRouter = require("./routes/sectorRoutes");
-
+const cors = require('cors');
 const app = express();
 
 const mongoose = require("mongoose");
 
+app.use(cors());
 app.use(express.json());
 
 app.use((req, res, next) => {
