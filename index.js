@@ -6,7 +6,9 @@ const app = express();
 
 const mongoose = require("mongoose");
 
-app.use(cors());
+app.use(cors({
+    origin: "https://user-sector-6inkuwl9b-arafat-khan072.vercel.app"
+}));
 app.use(express.json());
 
 app.use((req, res, next) => {
