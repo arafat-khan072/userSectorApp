@@ -1,7 +1,9 @@
 const express = require("express");
 const userRouter = require("./routes/userRoutes");
 const sectorRouter = require("./routes/sectorRoutes");
+var cors = require('cors')
 
+app.use(cors())
 const app = express();
 
 const mongoose = require("mongoose");
