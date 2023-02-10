@@ -60,7 +60,8 @@ const login = async (req, res) => {
 const profile = async (req, res) => {
     try {
         const userDetails = await userModel.find({ _id: req.userId });
-        res.status(200).json(userDetails);
+
+        res.status(200).json(userDetails[0]);
     } catch (error) {
         console.log(error);
         res.status(500).json({ message: "Something went wrong" })
