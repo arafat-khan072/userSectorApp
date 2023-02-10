@@ -7,7 +7,7 @@ const app = express();
 const mongoose = require("mongoose");
 
 app.use(cors({
-    origin: "https://user-sector-6inkuwl9b-arafat-khan072.vercel.app"
+    origin: "http://localhost:3000"
 }));
 app.use(express.json());
 
