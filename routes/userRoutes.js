@@ -8,6 +8,6 @@ userRouter.post("/signup", signup);
 userRouter.post("/login", login);
 
 userRouter.get("/profile", auth, profile);
-userRouter.post("/profile/update", auth, updateProfile);
+userRouter.put("/profile/update", auth, updateProfile);
 
 module.exports = userRouter;
