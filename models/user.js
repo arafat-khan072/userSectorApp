@@ -15,7 +15,13 @@ const UserSchema = mongoose.Schema({
     },
     sectors: [{
         id: { type: mongoose.Schema.ObjectId },
-        name: { type: String }
+        name: { type: String },
+        child: [
+            {
+                id: { type: mongoose.Schema.ObjectId },
+                name: { type: String },
+            }
+        ]
     }],
     isAgreed: {
         type: Boolean,

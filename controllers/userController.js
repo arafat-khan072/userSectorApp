@@ -70,8 +70,9 @@ const profile = async (req, res) => {
 
 const updateProfile = async (req, res) => {
     const id = req.userId;
-    const { sector, isAgreed } = req.body;
+    const { name, sector, isAgreed } = req.body;
     const newUser = {
+        username: name,
         sectors: sector,
         isAgreed: isAgreed
     };
