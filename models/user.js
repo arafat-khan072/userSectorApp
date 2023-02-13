@@ -14,12 +14,12 @@ const UserSchema = mongoose.Schema({
         required: true
     },
     sectors: [{
-        id: { type: mongoose.Schema.ObjectId },
-        name: { type: String },
+        value: { type: mongoose.Schema.ObjectId },
+        label: { type: String },
         child: [
             {
-                id: { type: mongoose.Schema.ObjectId },
-                name: { type: String },
+                value: { type: mongoose.Schema.ObjectId },
+                label: { type: String },
             }
         ]
     }],
